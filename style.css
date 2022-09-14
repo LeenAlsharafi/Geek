@@ -89,15 +89,8 @@ textarea {
     background-color: #5F9EA0;
 
 }
-#twitter, #linkedin {
-    position: absolute;
-    top: 92rem;
-    opacity: 0.7;  
-}
-#twitter
-{
-    left: 40rem
-}
+
+
 
 @media only screen and (max-width:700px){
     .contest-title  {
@@ -111,16 +104,6 @@ textarea {
     }
     table {
         width: 90%;
-    }
-    #twitter, #linkedin {
-        
-        top: 100rem;
-        opacity: 0.7;  
-        left:13rem;
-        top: 103rem;
-    }
-    #twitter {
-        left:8rem;
     }
 
     .week-Num {
