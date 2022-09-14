@@ -17,7 +17,7 @@
         <br>
                 <br>
                 <br>
-        <h1 class="contest-title" style="margin-top: 140px ;">Geek Of The Week</h1>
+        <h1 class="contest-title" style="margin-top: 130px ;">Geek Of The Week</h1>
         <h2 class="week-Num">Week 1</h2>
         <div id="everything">
         <div id="Q-section">
@@ -45,18 +45,18 @@
         </table>
            
         </div>
-        <form action="" method="post">
+        <form action="https://sheetdb.io/api/v1/jbn11rmgz2mo7" method="post" id="sheetdb-form">
             <label for="">الاسم</label>
             <br>
-            <input type="text">
+            <input type="text" name="data[Name]">
             <br>
             <label for="">حساب تويتر</label>
             <br>
-            <input type="text" placeholder="@YourAccount">
+            <input type="text" placeholder="@YourAccount" name="data[Twitter_account]">
             <br>
             <label for="">اللغة</label>
             <br>   
-            <select name="" id="">
+            <select name="data[Language_used]" id="">
                 <option value="Java">Java</option>
                 <option value="Python">Python</option>
                 <option value="C++">C++</option>
@@ -65,10 +65,27 @@
             <br>
             <label for="">الحل</label>
             <br>
-            <textarea name="" id="" cols="30" rows="10" placeholder=" ..انسخ الكود والصقه هنا"></textarea>
+            <textarea id="" cols="30" rows="10" placeholder=" ..انسخ الكود والصقه هنا" name="data[Code]"></textarea>
             <br>
         <input type="submit" name="submit" value="ارسل" id="submit">
         </form>
     </div>
+
+    <script>
+         var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('index2.html', '_blank');
+
+          });
+        });
+    </script>
     </body>
 </html>
